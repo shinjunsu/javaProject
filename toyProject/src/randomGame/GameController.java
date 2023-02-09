@@ -1,47 +1,28 @@
 package randomGame;
-import java.util.Scanner;
 
 public class GameController {
+//	참여 인원을 입력 받음
+//	인원 수 만큼 정보를 입력받아 객체 생성 (나이와 이름)
+//	게임을 선택
+//	선택한 게임의 객체와 인트로 객체 생성
+//	~~게임진행~~
+//	게임 종료후 게임 선택 및 게임 순서 정렬
+//	한명이 꽐라가 될 때 까지 게임을 진행
 	
 	
-	private String userName;
-
-	
-	 public void gameStart() {
-		 System.out.println("게임을 시작하겠습니다."
-		 		+ "\n참가자의 인원을 입력해 주세요");
-	}
-	 
-	 public void setHeadCounter(int setHeadCounter) {
-		 this.userHeadCounter = setHeadCounter;
-	 }
-	 
-	 public int getHeadCounter() {
-		 return this.userHeadCounter;
-	 }
-	
-	 public void underAgeReading(int age) {
-		 if(age<20) {
-			 System.out.println("미성년자는 게임해 참가하실 수 없습니다.\n"
-			 		+ "게임을 종료합니다.");
-			 System.exit(0);
-		 }
-	}
-	 
-	 public void setUserInfo() {
-			for(int i=0;i<userHeadCounter;i++) {
-				System.out.println(i+1 +"번째 참가자의 나이를 입력해주세요");
-				Scanner in = new Scanner(System.in);
-				underAgeReading(in.nextInt());
-			}
-	 }
-	 
-	//UserList ul[] = new UserList();
-	 public void setUserInfo(int seq,int userAge,String userName) {
-			
-	 }
+	public static void main(String[] args) {
+		GameManager gm = new GameManager();
+		int headCount = gm.userCounter(); //참여자수 입력받음
+		gm.createUser(headCount); //참여자수 만큼 객체생성
 		
-	 
+		System.out.println();
+	}
+	
+	
 	
 	
 }
+	 
+	 
+	
+
